@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="content" method="upgrade">
+	<name>PLG_JLMUUT</name>
+	<author>JoomLine</author>
+	<creationDate>2014.11.17</creationDate>
+	<copyright>(C) 2014 by Kunitsyn Vadim(http://www.joomline.ru)</copyright>
+	<license>GNU/GPL: http://www.gnu.org/copyleft/gpl.html</license>
+	<authorEmail>vadim@joomline.ru</authorEmail>
+	<authorUrl>http://joomline.ru</authorUrl>
+	<version>1.0</version>
+	<description>PLG_JLMUUT_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="jlmuut">jlmuut.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+	</files>
+	<languages folder="language">
+        <language tag="ru-RU">ru-RU/ru-RU.plg_content_jlmuut.ini</language>
+        <language tag="ru-RU">ru-RU/ru-RU.plg_content_jlmuut.sys.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_content_jlmuut.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_content_jlmuut.sys.ini</language>
+    </languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="apiId" type="text" label="PLG_JLMUUT_APIID_LABEL" default="name"/>
+				
+				<field name="cat_name" type="textarea" label="PLG_JLMUUT_CATNAME_LABEL" default="2,3::general;"/>
+				<field name="cat_name_default" type="text" label="PLG_JLMUUT_CATNAME_DEFAULT_LABEL" default="general"/>
+				
+				<field name="autoAdd" type="radio" default="1" label="PLG_JLMUUT_AUTOADD_LABEL" description="PLG_JLMUUT_AUTOADD_DESC">
+				  <option value="0">PLG_JLMUUT_NO</option>
+				  <option value="1">PLG_JLMUUT_YES</option>
+				</field>
+				<field name="categories" type="category" extension='com_content' default="0" multiple="multiple"
+						label="PLG_JLMUUT_CAT_LABEL"
+						description="PLG_JLMUUT_CAT_DESC"/>
+				<field name="typeviewerjq" type="radio" default="1" label="PLG_JLMUUT_TYPEVIEWER_LABEL" >
+					 <option value="0">PLG_JLMUUT_NO</option>
+					 <option value="1">PLG_JLMUUT_YES</option>
+				</field>
+				<field name="typeviewernojq" type="radio" default="1" label="PLG_JLMUUT_TYPEVIEWERNOJQ_LABEL" >
+					 <option value="0">PLG_JLMUUT_NO</option>
+					 <option value="1">PLG_JLMUUT_YES</option>
+				</field>
+				<field name="link" type="radio" label="PLG_JLMUUT_LINK_LABEL" description="PLG_JLMUUT_LINK_DESCRIPTION" default="1">
+					<option value="0">PLG_JLMUUT_YES</option>
+					<option value="1">PLG_JLMUUT_NO</option>
+				</field>
+				<field
+					name="secretkey"
+					type="text"
+					label="PLG_JLMUUT_FIELD_SECRETKEY_LABEL"
+					description="PLG_JLMUUT_FIELD_SECRETKEY_DESC" />	
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers><server type="extension" priority="1" name="Joomline">http://joomline.net/index.php?option=com_ars&amp;view=update&amp;task=stream&amp;format=xml&amp;id=8&amp;dummy=extension.xml</server></updateservers>
+</extension>
